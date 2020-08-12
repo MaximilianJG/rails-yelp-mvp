@@ -1,12 +1,13 @@
-<div class="text-align-center">
+<div class="container text-center">
 
 
-<h1>All Restaurants</h1>
+<h1 class="pt-3">All Restaurants</h1>
 
-<ul>
+<ul class="row justify-content-md-center">
   <% @restaurants.each do |restaurant| %>
-    <li class="card p-5"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-    <br>
+      <div class="col-6">
+        <li class="card rounded p-4 text-center mb-3"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+      </div>
   <% end %>
 </ul>
 

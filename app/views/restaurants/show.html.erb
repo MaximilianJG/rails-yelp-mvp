@@ -1,11 +1,26 @@
-<h1><%= @restaurant.name %></h1>
-<h5> -> <%= @restaurant.category.capitalize %></h5>
 
-<ul>
-  <% @restaurant.reviews.each do |review| %>
-  <li><%= review.content %></li>
-  <% end %>
-</ul>
+<div class="container pt-3">
 
-<%= link_to "Back to all restaurants", restaurants_path, class: "btn btn-primary" %>
-<%= link_to "Create a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+<div class="d-flex justify-content-between">
+  <div><h1 class="pt-2"><%= @restaurant.name %></h1></div>
+  <div><%= link_to "Back to all restaurants", restaurants_path, class: "btn btn-primary mb-4 mt-3" %></div>
+</div>
+
+  <h5> Category: <%= @restaurant.category.capitalize %></h5>
+  <p>Address: <%= @restaurant.address.capitalize %></p>
+
+  <br>
+
+  <h2>Reviews:</h2>
+
+  <ul class="row">
+    <% @restaurant.reviews.each do |review| %>
+    <div class="col-12">
+      <li class="card mt-3 p-3"><%= review.content %></li>
+    </div>
+    <% end %>
+
+  </ul>
+
+  <%= link_to "Create a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary mb-5 mr-5 mt-3" %>
+</div>

@@ -1,10 +1,15 @@
-<h1>Create a new restaurant</h1>
+<div class="container pt-3">
 
-<%= simple_form_for(@restaurant) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :category %>
-  <%= f.submit %>
-<% end %>
+  <div class="d-flex justify-content-between">
+  <div><h1 class="pt-2">Create a new restaurant</h1></div>
+  <div><%= link_to "Back to all restaurants", restaurants_path, class: "btn btn-primary mt-3" %></div>
+</div>
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :category %>
+    <%= f.submit %>
+  <% end %>
+</div>
 
-<%= link_to "Back to all Restaurants", restaurants_path, class: "btn btn-primary" %>
+
